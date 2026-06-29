@@ -1,0 +1,24 @@
+# Ignore backups and old update files
+index_original_backup.html
+style_original_backup.css
+index_updated.html
+style_updated.css
+changes.diff
+changes_explanation.md
+updated_portfolio_walkthrough.md
+
+# Ignore media files and folders not referenced by the code
+Animate_eye_in_illustration_202606261448.mp4
+Cat_walking_on_line_202606262024.mp4
+Untitled - June 26, 2026 at 15.21.12 (1).mp4
+Untitled - June 26, 2026 at 20.25.20.mp4
+ezgif-4892a92bdccd2ee4-jpg.zip
+ezgif-7135e19fed9a6c76-jpg.zip
+download.jfif
+doodles/
+LOOP/
+
+# Ignore local server logs or settings
+.gemini/
+*.log
+.DS_Store
