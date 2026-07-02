@@ -8,10 +8,10 @@
 
   <!-- Google Fonts & FontAwesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css?v=3.0.0" />
+  <link rel="stylesheet" href="style.css?v=3.4.0" />
 
   <!-- Apply saved theme before paint to avoid flash -->
-  <script>(function(){try{if(localStorage.getItem('ak-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();</script>
+  <script>(function () { try { if (localStorage.getItem('ak-theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) { } })();</script>
 
   <!-- GSAP & ScrollTrigger CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -73,12 +73,15 @@
 
     <!-- Fixed Top Navbar -->
     <nav class="navbar fade-up-element">
-      <a href="#home" class="logo">A.Korde<span>.</span></a>
+      <a href="#home" class="logo" aria-label="Anushka Korde — home">
+        <img src="logo/bg removed/logo2c-Photoroom.png" alt="Anushka Korde" class="logo-avatar">
+      </a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="Anushka_Korde_2026.pdf" download>Resume</a></li>
-        <li><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
+        <li><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode"><i
+              class="fa-solid fa-moon"></i></button></li>
       </ul>
     </nav>
 
@@ -118,27 +121,6 @@
             <div class="avatar-bg-semicircle"></div>
             <img src="my.png" alt="Anushka Korde" class="avatar-img">
           </div>
-
-          <!-- 16 scattered doodle wrapper using avatar doodles.png (Temporarily commented out)
-        <div class="doodles-wrapper">
-          <div class="doodle-item doodle-1"></div>
-          <div class="doodle-item doodle-2"></div>
-          <div class="doodle-item doodle-3"></div>
-          <div class="doodle-item doodle-4"></div>
-          <div class="doodle-item doodle-5"></div>
-          <div class="doodle-item doodle-6"></div>
-          <div class="doodle-item doodle-7"></div>
-          <div class="doodle-item doodle-8"></div>
-          <div class="doodle-item doodle-9"></div>
-          <div class="doodle-item doodle-10"></div>
-          <div class="doodle-item doodle-11"></div>
-          <div class="doodle-item doodle-12"></div>
-          <div class="doodle-item doodle-13"></div>
-          <div class="doodle-item doodle-14"></div>
-          <div class="doodle-item doodle-15"></div>
-          <div class="doodle-item doodle-16"></div>
-        </div>
-        -->
         </div>
       </header>
 
@@ -177,6 +159,10 @@
                   obsessing over the small moments that make a product feel human.</p>
 
                 <div class="card-back-meta">
+                  <div class="meta-row">
+                    <span class="meta-label">Name</span>
+                    <span class="meta-value">Anushka Korde</span>
+                  </div>
                   <div class="meta-row">
                     <span class="meta-label">Age</span>
                     <span class="meta-value">22</span>
@@ -452,41 +438,41 @@
         <span class="po po3"></span>
       </div>
       <div class="approach-content">
-            <div class="approach-topline">
-              <span class="section-eyebrow">✦ how I work</span>
-              <h2 class="approach-kicker">My approach to design</h2>
-            </div>
+        <div class="approach-topline">
+          <span class="section-eyebrow">✦ how I work</span>
+          <h2 class="approach-kicker">My approach to design</h2>
+        </div>
 
-            <div class="approach-blob" id="approach-blob">
-              <span class="blob-ring" aria-hidden="true"></span>
-              <div class="blob-stack">
-                <div class="blob-inner active" data-step="0">
-                  <span class="blob-num">01</span>
-                  <h3 class="blob-headline">It starts with the people</h3>
-                  <p class="blob-text">I dig into the people and the business first — talking to founders and
-                    stakeholders, mapping flows, and finding where users actually get stuck.</p>
-                </div>
-                <div class="blob-inner" data-step="1">
-                  <span class="blob-num">02</span>
-                  <h3 class="blob-headline">Explore fast, cut early</h3>
-                  <p class="blob-text">With Claude and Figma I try many directions quickly and drop the weak ones
-                    early — keeping only the path that takes friction off real people.</p>
-                </div>
-                <div class="blob-inner" data-step="2">
-                  <span class="blob-num">03</span>
-                  <h3 class="blob-headline">Systems keep it calm</h3>
-                  <p class="blob-text">I build the design systems and interaction details that keep everything
-                    consistent, so the experience stays calm and clear as it scales.</p>
-                </div>
-              </div>
+        <div class="approach-blob" id="approach-blob">
+          <span class="blob-ring" aria-hidden="true"></span>
+          <div class="blob-stack">
+            <div class="blob-inner active" data-step="0">
+              <span class="blob-num">01</span>
+              <h3 class="blob-headline">It starts with the people</h3>
+              <p class="blob-text">I dig into the people and the business first — talking to founders and
+                stakeholders, mapping flows, and finding where users actually get stuck.</p>
             </div>
+            <div class="blob-inner" data-step="1">
+              <span class="blob-num">02</span>
+              <h3 class="blob-headline">Explore fast, cut early</h3>
+              <p class="blob-text">With Claude and Figma I try many directions quickly and drop the weak ones
+                early — keeping only the path that takes friction off real people.</p>
+            </div>
+            <div class="blob-inner" data-step="2">
+              <span class="blob-num">03</span>
+              <h3 class="blob-headline">Systems keep it calm</h3>
+              <p class="blob-text">I build the design systems and interaction details that keep everything
+                consistent, so the experience stays calm and clear as it scales.</p>
+            </div>
+          </div>
+        </div>
 
-            <div class="approach-dots" id="approach-dots">
-              <button class="adot active" data-step="0" aria-label="Step 1"></button>
-              <button class="adot" data-step="1" aria-label="Step 2"></button>
-              <button class="adot" data-step="2" aria-label="Step 3"></button>
-            </div>
-            <p class="approach-scrollhint">scroll ↓</p>
+        <div class="approach-dots" id="approach-dots">
+          <button class="adot active" data-step="0" aria-label="Step 1"></button>
+          <button class="adot" data-step="1" aria-label="Step 2"></button>
+          <button class="adot" data-step="2" aria-label="Step 3"></button>
+        </div>
+        <p class="approach-scrollhint">scroll ↓</p>
       </div>
     </section>
     <div class="approach-scroll-spacer" aria-hidden="true">
@@ -532,21 +518,39 @@
           </div>
         </div>
 
-        <!-- Right: Line Art Canvas Animation -->
+        <!-- Right: Illustration -->
         <div class="cta-right">
-          <canvas id="cta-loop-canvas" class="cta-loop-canvas"></canvas>
+          <img src="cta-illustration.png" alt="Illustration of a person working on a laptop with a coffee"
+            class="cta-illustration-img">
         </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <!-- Footer Cat Walk -->
+      <!-- Footer Cat Walk (drawn SVG, CSS-animated) -->
       <div class="footer-cat-walk-container">
-        <canvas id="footer-cat-canvas"></canvas>
+        <div class="mini-cat">
+          <svg class="mini-cat-svg" viewBox="0 0 62 34" width="54" height="30" aria-hidden="true">
+            <g fill="var(--cat-color)">
+              <path class="cat-tail" d="M10 18 C1 16 0 7 6 6 C3 9 5 15 12 16 Z"></path>
+              <rect class="leg leg-b1" x="15" y="22" width="4" height="10" rx="2"></rect>
+              <rect class="leg leg-b2" x="22" y="22" width="4" height="10" rx="2"></rect>
+              <ellipse cx="28" cy="17" rx="18" ry="8.5"></ellipse>
+              <rect class="leg leg-f1" x="36" y="22" width="4" height="10" rx="2"></rect>
+              <rect class="leg leg-f2" x="43" y="22" width="4" height="10" rx="2"></rect>
+              <circle cx="48" cy="13" r="8"></circle>
+              <path d="M42 7 L45 2 L49 7 Z"></path>
+              <path d="M54 7 L51 2 L47 7 Z"></path>
+            </g>
+            <circle cx="51" cy="12" r="1.2" fill="var(--cat-eye)"></circle>
+          </svg>
+        </div>
       </div>
       <div class="footer-inner">
-        <a href="#home" class="footer-logo">A.Korde<span>.</span></a>
+        <a href="#home" class="footer-logo" aria-label="Anushka Korde — home">
+          <img src="logo/bg removed/logo2c-Photoroom.png" alt="Anushka Korde" class="footer-logo-avatar">
+        </a>
         <p class="footer-copyright">© 2026 Anushka Korde. Crafted with care & custom frame loops.</p>
         <div class="footer-socials">
           <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
@@ -860,11 +864,6 @@
         // Dispatch a resize event so that canvas elements (like the CTA line art loop)
         // calculate correct parent dimensions now that the container is visible
         window.dispatchEvent(new Event('resize'));
-
-        // Initialize the walking cat at the bottom of the page
-        if (typeof initFooterCatWalk === 'function') {
-          initFooterCatWalk();
-        }
 
         // Trigger staggered fade-in animations on hero elements
         fadeUpElements.forEach((el, index) => {
@@ -1713,14 +1712,14 @@
 
         // Tool logo cubes — real 3D icon tiles sliced from your icon sheet
         const TOOLS = [
-          { name: 'Figma',       img: 'tool-icons/figma.png',       color: '#F24E1E', abbr: 'Fi' },
-          { name: 'Blender',     img: 'tool-icons/blender.png',     color: '#EA7600', abbr: 'Bl' },
-          { name: 'Spline',      img: 'tool-icons/spline.png',      color: '#6E5BFF', abbr: 'Sp' },
-          { name: 'ChatGPT',     img: 'tool-icons/chatgpt.png',     color: '#10A37F', abbr: 'Gp' },
-          { name: 'Claude',      img: 'tool-icons/claude.png',      color: '#D97756', abbr: 'Cl' },
-          { name: 'Fresco',      img: 'tool-icons/fresco.png',      color: '#000BFF', abbr: 'Fr' },
+          { name: 'Figma', img: 'tool-icons/figma.png', color: '#F24E1E', abbr: 'Fi' },
+          { name: 'Blender', img: 'tool-icons/blender.png', color: '#EA7600', abbr: 'Bl' },
+          { name: 'Spline', img: 'tool-icons/spline.png', color: '#6E5BFF', abbr: 'Sp' },
+          { name: 'ChatGPT', img: 'tool-icons/chatgpt.png', color: '#10A37F', abbr: 'Gp' },
+          { name: 'Claude', img: 'tool-icons/claude.png', color: '#D97756', abbr: 'Cl' },
+          { name: 'Fresco', img: 'tool-icons/fresco.png', color: '#000BFF', abbr: 'Fr' },
           { name: 'Antigravity', img: 'tool-icons/antigravity.png', color: '#5A7365', abbr: 'Ag' },
-          { name: 'Miro',        img: 'tool-icons/miro.png',        color: '#FFC01E', abbr: 'Mi' }
+          { name: 'Miro', img: 'tool-icons/miro.png', color: '#FFC01E', abbr: 'Mi' }
         ];
         TOOLS.forEach((t) => {
           const x = 120 + Math.random() * Math.max(60, frameW - 240);
@@ -2110,8 +2109,8 @@
               if (isDark) {
                 for (let j = 0; j < data.length; j += 4) {
                   const r = data[j];
-                  const g = data[j+1];
-                  const b = data[j+2];
+                  const g = data[j + 1];
+                  const b = data[j + 2];
                   if (r < 30 && g < 30 && b < 30) {
                     data[j + 3] = 0;
                   }
@@ -2119,8 +2118,8 @@
               } else {
                 for (let j = 0; j < data.length; j += 4) {
                   let r = data[j];
-                  let g = data[j+1];
-                  let b = data[j+2];
+                  let g = data[j + 1];
+                  let b = data[j + 2];
                   r = 255 - r;
                   g = 255 - g;
                   b = 255 - b;
@@ -2128,8 +2127,8 @@
                     data[j + 3] = 0;
                   } else {
                     data[j] = r;
-                    data[j+1] = g;
-                    data[j+2] = b;
+                    data[j + 1] = g;
+                    data[j + 2] = b;
                   }
                 }
               }
@@ -2171,7 +2170,7 @@
           cat: 'STRATEGY · FLOWS · SYSTEMS',
           desc: "I shape product experiences end to end: discovery and research, user flows and information architecture, then the design system that keeps everything consistent as it scales.",
           tags: ['User flows', 'Information architecture', 'Design systems', 'Research', 'Prototyping'],
-          link: '#'
+          link: 'product design case study.html'
         },
         uiux: {
           kicker: 'UI/UX Design',
@@ -2206,14 +2205,14 @@
       // ---- Gallery: paintings & art (drop your files into a `paintings/` folder) ----
       // Replace `img` with your real file paths. Missing files fall back to a coloured card.
       const PAINTINGS = [
-        { title: 'Untitled study', tag: 'Acrylic',     img: 'paintings/painting-1.jpg' },
-        { title: 'Quiet light',    tag: 'Watercolour',  img: 'paintings/painting-2.jpg' },
-        { title: 'Field notes',    tag: 'Ink',          img: 'paintings/painting-3.jpg' },
-        { title: 'Warm hour',      tag: 'Gouache',      img: 'paintings/painting-4.jpg' },
-        { title: 'Portrait',       tag: 'Charcoal',     img: 'paintings/painting-5.jpg' },
-        { title: 'Bloom',          tag: 'Acrylic',      img: 'paintings/painting-6.jpg' },
-        { title: 'Drift',          tag: 'Digital',      img: 'paintings/painting-7.jpg' },
-        { title: 'Still',          tag: 'Oil',          img: 'paintings/painting-8.jpg' }
+        { title: 'Untitled study', tag: 'Acrylic', img: 'paintings/painting-1.jpg' },
+        { title: 'Quiet light', tag: 'Watercolour', img: 'paintings/painting-2.jpg' },
+        { title: 'Field notes', tag: 'Ink', img: 'paintings/painting-3.jpg' },
+        { title: 'Warm hour', tag: 'Gouache', img: 'paintings/painting-4.jpg' },
+        { title: 'Portrait', tag: 'Charcoal', img: 'paintings/painting-5.jpg' },
+        { title: 'Bloom', tag: 'Acrylic', img: 'paintings/painting-6.jpg' },
+        { title: 'Drift', tag: 'Digital', img: 'paintings/painting-7.jpg' },
+        { title: 'Still', tag: 'Oil', img: 'paintings/painting-8.jpg' }
       ];
       const GAL_COLORS = ['#FF5A36', '#F2B33A', '#2C7C8C', '#E07BB5', '#F4A261', '#5A7365', '#C56A4E', '#7C6FA8'];
 
@@ -2384,6 +2383,21 @@
         }
       });
 
+      // Keep the floating menu above the footer when scrolled to the bottom
+      const footerEl = document.querySelector('.footer');
+      if (footerEl && fabWrap) {
+        const baseBottom = 32; // matches CSS bottom: 2rem
+        const gap = 20;        // breathing room above the footer
+        const positionFab = () => {
+          const footerInView = window.innerHeight - footerEl.getBoundingClientRect().top;
+          const lift = footerInView - baseBottom + gap;
+          fabWrap.style.transform = lift > 0 ? `translateY(${-lift}px)` : 'translateY(0)';
+        };
+        window.addEventListener('scroll', positionFab, { passive: true });
+        window.addEventListener('resize', positionFab);
+        positionFab();
+      }
+
       // ---- Close handlers ----
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay || e.target.hasAttribute('data-close')) closeOverlay();
@@ -2444,11 +2458,123 @@
       function apply(dark) {
         root.classList.toggle('dark', dark);
         if (icon) icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-        try { localStorage.setItem('ak-theme', dark ? 'dark' : 'light'); } catch (e) {}
+        try { localStorage.setItem('ak-theme', dark ? 'dark' : 'light'); } catch (e) { }
       }
       // initialise from current state (set pre-paint by the head script)
       apply(root.classList.contains('dark'));
       btn.addEventListener('click', () => apply(!root.classList.contains('dark')));
+    })();
+
+    // ===== HIDDEN PAW-PRINT HUNT (easter egg) =====
+    (function pawHunt() {
+      const KEY = 'ak-paw-hunt-v1';
+      const ACT_KEY = 'ak-paw-last-activity';
+
+      // Reset found paws if user is gone for more than 5 minutes (300,000 ms)
+      const now = Date.now();
+      const lastActivity = localStorage.getItem(ACT_KEY);
+      if (lastActivity) {
+        const diff = now - parseInt(lastActivity, 10);
+        if (diff > 5 * 60 * 1000) {
+          try { localStorage.removeItem(KEY); } catch (e) { }
+        }
+      }
+
+      // Update last activity now and track interactions
+      try { localStorage.setItem(ACT_KEY, now.toString()); } catch (e) { }
+      const updateActivity = () => {
+        try { localStorage.setItem(ACT_KEY, Date.now().toString()); } catch (e) { }
+      };
+      ['click', 'mousemove', 'scroll', 'keydown', 'touchstart'].forEach(evt => {
+        window.addEventListener(evt, updateActivity, { passive: true });
+      });
+
+      // Handle visibility changes to reset in real-time if tab was backgrounded
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          const lastAct = localStorage.getItem(ACT_KEY);
+          if (lastAct && (Date.now() - parseInt(lastAct, 10) > 5 * 60 * 1000)) {
+            try { localStorage.removeItem(KEY); } catch (e) { }
+            found = [];
+            document.querySelectorAll('.hidden-cat').forEach(el => {
+              el.classList.remove('found', 'pop');
+              el.style.color = '';
+            });
+          }
+          updateActivity();
+        }
+      });
+
+      const spots = [
+        { sel: '.hero-section', pos: { top: '92px', right: '42px' }, rot: -10, color: '#FF5A36' },
+        { sel: '.who-i-am-section', pos: { bottom: '24px', left: '32px' }, rot: 8, color: '#F2B33A' },
+        { sel: '.who-i-am-section', pos: { top: '20px', right: '44px' }, rot: -6, color: '#2C7C8C' },
+        { sel: '.strongest-skills-section', pos: { top: '26px', left: '34px' }, rot: 12, color: '#7B61FF' },
+        { sel: '.strongest-skills-section', pos: { bottom: '30px', right: '38px' }, rot: -14, color: '#E5679A' },
+        { sel: '.approach-section', pos: { top: '32px', right: '36px' }, rot: 6, color: '#FF5A36' },
+        { sel: '.approach-section', pos: { bottom: '28px', left: '32px' }, rot: -8, color: '#F2B33A' },
+        { sel: '.capabilities-section', pos: { top: '28px', left: '36px' }, rot: 10, color: '#2C7C8C' },
+        { sel: '.capabilities-section', pos: { bottom: '32px', right: '36px' }, rot: -12, color: '#7B61FF' },
+        { sel: '.cta-section', pos: { bottom: '28px', left: '34px' }, rot: 7, color: '#E5679A' }
+      ];
+      const total = spots.length;
+      let found = [];
+      try { found = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { }
+
+      const svg = '<svg viewBox="0 0 32 34" aria-hidden="true">'
+        + '<ellipse cx="16" cy="24" rx="8" ry="6.5"></ellipse>'
+        + '<ellipse cx="6.5" cy="14" rx="3" ry="4"></ellipse>'
+        + '<ellipse cx="13" cy="9" rx="3" ry="4.3"></ellipse>'
+        + '<ellipse cx="19" cy="9" rx="3" ry="4.3"></ellipse>'
+        + '<ellipse cx="25.5" cy="14" rx="3" ry="4"></ellipse>'
+        + '</svg>';
+
+      let toastEl = null;
+
+      function showToast(n) {
+        if (!toastEl) { toastEl = document.createElement('div'); toastEl.className = 'cat-toast'; document.body.appendChild(toastEl); }
+        toastEl.innerHTML = '<i class="fa-solid fa-paw"></i> Paw print found · ' + n + ' / ' + total;
+        toastEl.classList.add('show');
+        clearTimeout(toastEl._t);
+        toastEl._t = setTimeout(() => toastEl.classList.remove('show'), 2000);
+      }
+
+      function showAchievement() {
+        if (toastEl) toastEl.classList.remove('show');
+        const a = document.createElement('div');
+        a.className = 'cat-achievement';
+        a.innerHTML = '<div class="ach-icon"><i class="fa-solid fa-trophy"></i></div>'
+          + '<div><p class="ach-title">Achievement unlocked</p>'
+          + '<p class="ach-sub">Cat whisperer — you found all ' + total + ' hidden paw prints.</p></div>';
+        document.body.appendChild(a);
+        requestAnimationFrame(() => a.classList.add('show'));
+        setTimeout(() => { a.classList.remove('show'); setTimeout(() => a.remove(), 500); }, 6500);
+      }
+
+      spots.forEach((s, i) => {
+        const host = document.querySelector(s.sel);
+        if (!host) return;
+        if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'hidden-cat';
+        el.setAttribute('aria-label', 'Find the hidden paw print');
+        el.innerHTML = svg;
+        Object.keys(s.pos).forEach(k => { el.style[k] = s.pos[k]; });
+        el.querySelector('svg').style.transform = 'rotate(' + s.rot + 'deg)';
+        if (found.includes(i)) { el.classList.add('found'); el.style.color = s.color; }
+        el.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (el.classList.contains('found')) return;
+          el.classList.add('found', 'pop');
+          el.style.color = s.color;
+          setTimeout(() => el.classList.remove('pop'), 600);
+          if (!found.includes(i)) { found.push(i); try { localStorage.setItem(KEY, JSON.stringify(found)); } catch (e) { } }
+          if (found.length >= total) showAchievement(); else showToast(found.length);
+        });
+        host.appendChild(el);
+      });
     })();
   </script>
 </body>
