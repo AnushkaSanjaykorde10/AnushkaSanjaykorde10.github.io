@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css?v=3.0.0" />
 
+  <!-- Apply saved theme before paint to avoid flash -->
+  <script>(function(){try{if(localStorage.getItem('ak-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})();</script>
+
   <!-- GSAP & ScrollTrigger CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -75,6 +78,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="Anushka_Korde_2026.pdf" download>Resume</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
       </ul>
     </nav>
 
@@ -215,6 +219,11 @@
 
     <!-- Where I'm Strongest (Skills) Section -->
     <section id="skills" class="strongest-skills-section story-card">
+      <div class="skills-orbs" aria-hidden="true">
+        <span class="s1"></span>
+        <span class="s2"></span>
+        <span class="s3"></span>
+      </div>
       <div class="motif-mesh">
         <div class="float-shape shape-circle"></div>
         <div class="float-shape shape-square"></div>
@@ -434,6 +443,58 @@
     <!-- Extra scroll length so the whole 3D road plays out while the card stays pinned, before the next card covers it -->
     <div class="experience-scroll-spacer" aria-hidden="true"></div>
 
+    <!-- ===== My Approach to Design (on-brand glass card) ===== -->
+    <!-- ===== My Approach to Design (morphing circle, scroll-driven) ===== -->
+    <section id="approach" class="approach-section story-card">
+      <div class="approach-orbs" aria-hidden="true">
+        <span class="po po1"></span>
+        <span class="po po2"></span>
+        <span class="po po3"></span>
+      </div>
+      <div class="approach-content">
+            <div class="approach-topline">
+              <span class="section-eyebrow">✦ how I work</span>
+              <h2 class="approach-kicker">My approach to design</h2>
+            </div>
+
+            <div class="approach-blob" id="approach-blob">
+              <span class="blob-ring" aria-hidden="true"></span>
+              <div class="blob-stack">
+                <div class="blob-inner active" data-step="0">
+                  <span class="blob-num">01</span>
+                  <h3 class="blob-headline">It starts with the people</h3>
+                  <p class="blob-text">I dig into the people and the business first — talking to founders and
+                    stakeholders, mapping flows, and finding where users actually get stuck.</p>
+                </div>
+                <div class="blob-inner" data-step="1">
+                  <span class="blob-num">02</span>
+                  <h3 class="blob-headline">Explore fast, cut early</h3>
+                  <p class="blob-text">With Claude and Figma I try many directions quickly and drop the weak ones
+                    early — keeping only the path that takes friction off real people.</p>
+                </div>
+                <div class="blob-inner" data-step="2">
+                  <span class="blob-num">03</span>
+                  <h3 class="blob-headline">Systems keep it calm</h3>
+                  <p class="blob-text">I build the design systems and interaction details that keep everything
+                    consistent, so the experience stays calm and clear as it scales.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="approach-dots" id="approach-dots">
+              <button class="adot active" data-step="0" aria-label="Step 1"></button>
+              <button class="adot" data-step="1" aria-label="Step 2"></button>
+              <button class="adot" data-step="2" aria-label="Step 3"></button>
+            </div>
+            <p class="approach-scrollhint">scroll ↓</p>
+      </div>
+    </section>
+    <div class="approach-scroll-spacer" aria-hidden="true">
+      <div class="approach-marker" data-step="0"></div>
+      <div class="approach-marker" data-step="1"></div>
+      <div class="approach-marker" data-step="2"></div>
+    </div>
+
     <!-- Capabilities Section -->
     <section class="capabilities-section story-card">
       <div class="motif-capabilities"></div>
@@ -478,43 +539,12 @@
       </div>
     </section>
 
-    <!-- Section 2: Connect (Centered) -->
-    <section id="contact" class="connect-section story-card">
-      <div class="motif-contact-glow"></div>
-      <div class="connect-center">
-        <span class="connect-label">CONTACT</span>
-        <h2 class="connect-heading">Let's connect.</h2>
-
-        <form class="connect-form" onsubmit="event.preventDefault(); alert('Message sent!');">
-          <div class="connect-form-row">
-            <div class="connect-form-group">
-              <label class="connect-form-label" for="connect-name">NAME</label>
-              <input type="text" id="connect-name" class="connect-form-input" placeholder="Your name" required />
-            </div>
-            <div class="connect-form-group">
-              <label class="connect-form-label" for="connect-email">E-MAIL</label>
-              <input type="email" id="connect-email" class="connect-form-input" placeholder="your@email.com" required />
-            </div>
-          </div>
-          <div class="connect-form-group">
-            <label class="connect-form-label" for="connect-message">MESSAGE</label>
-            <textarea id="connect-message" class="connect-form-textarea" placeholder="Tell me about your project..."
-              required></textarea>
-          </div>
-          <button type="submit" class="connect-submit-btn">Send the message →</button>
-        </form>
-
-        <div class="connect-email-line">
-          <span class="connect-or">Or email directly:</span>
-          <a href="/cdn-cgi/l/email-protection#2b4a455e5843404a4044594f4e1a1b6b4c464a424705484446"
-            class="connect-email"><span class="__cf_email__"
-              data-cfemail="4829263d3b20232923273a2c2d7978082f25292124662b2725">[email&#160;protected]</span></a>
-        </div>
-      </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
+      <!-- Footer Cat Walk -->
+      <div class="footer-cat-walk-container">
+        <canvas id="footer-cat-canvas"></canvas>
+      </div>
       <div class="footer-inner">
         <a href="#home" class="footer-logo">A.Korde<span>.</span></a>
         <p class="footer-copyright">© 2026 Anushka Korde. Crafted with care & custom frame loops.</p>
@@ -542,8 +572,6 @@
             <p class="ak-modal-lead" id="svc-lead"></p>
             <div class="ak-modal-actions">
               <a class="ak-btn-primary" id="svc-link" href="#" target="_blank" rel="noopener">View projects →</a>
-              <a class="ak-btn-ghost" id="svc-link2"
-                href="/cdn-cgi/l/email-protection#e889869d9b80838983879a8c8dd9d8a88f85898184c68b8785">Work with me</a>
             </div>
           </div>
         </div>
@@ -570,14 +598,24 @@
       </div>
 
       <!-- Gallery -->
-      <div class="ak-modal ak-content-modal" id="ak-gallery-modal" role="dialog" aria-modal="true">
+      <div class="ak-modal ak-gallery-immersive" id="ak-gallery-modal" role="dialog" aria-modal="true">
         <button class="ak-modal-close" data-close aria-label="Close">&times;</button>
-        <div class="ak-content-head">
-          <span class="section-eyebrow">✦ selected work</span>
-          <h2>Gallery</h2>
-          <p>A few things I've made.</p>
+        <div class="ak-ring-head">
+          <span class="ak-ring-eyebrow">✦ selected work — paintings &amp; art</span>
         </div>
-        <div class="ak-gallery-grid" id="ak-gallery-grid"></div>
+        <div class="ak-ring-bigword">GALLERY</div>
+        <div class="ak-ring-stage" id="ak-ring-stage">
+          <div class="ak-ring" id="ak-ring"></div>
+        </div>
+        <div class="ak-ring-controls">
+          <button class="ak-ring-btn" id="ak-ring-prev" aria-label="Previous">&larr;</button>
+          <div class="ak-ring-meta">
+            <span id="ak-ring-title">Untitled</span>
+            <em id="ak-ring-counter">01 / 08</em>
+          </div>
+          <button class="ak-ring-btn" id="ak-ring-next" aria-label="Next">&rarr;</button>
+        </div>
+        <p class="ak-ring-hint">drag to spin · hover a piece to pause</p>
       </div>
 
     </div>
@@ -818,6 +856,15 @@
       setTimeout(() => {
         loadingScreen.style.display = 'none';
         mainContent.classList.add('visible');
+
+        // Dispatch a resize event so that canvas elements (like the CTA line art loop)
+        // calculate correct parent dimensions now that the container is visible
+        window.dispatchEvent(new Event('resize'));
+
+        // Initialize the walking cat at the bottom of the page
+        if (typeof initFooterCatWalk === 'function') {
+          initFooterCatWalk();
+        }
 
         // Trigger staggered fade-in animations on hero elements
         fadeUpElements.forEach((el, index) => {
@@ -1500,7 +1547,15 @@
           'Animation': 'Motion design, micro-interactions and scroll animations',
           'Frontend': 'HTML, CSS, JavaScript and React development',
           'AI': 'Prompt engineering and AI tool integration',
-          'ML': 'Machine learning model integration and deployment'
+          'ML': 'Machine learning model integration and deployment',
+          'Figma': 'Figma — design, prototyping & systems',
+          'Blender': 'Blender — 3D modeling & motion',
+          'Spline': 'Spline — 3D & interactive scenes',
+          'Claude': 'Claude — AI design & prompt engineering',
+          'ChatGPT': 'ChatGPT — AI ideation & content',
+          'Fresco': 'Fresco — drawing, painting & illustration',
+          'Antigravity': 'Antigravity — AI-assisted building',
+          'Miro': 'Miro — whiteboarding & user flows'
         };
 
         const engine = Engine.create({ gravity: { x: 0, y: 0 } });
@@ -1535,10 +1590,18 @@
         const pillElements = [];
         let frozenId = null;
 
-        function createPill(label, x, y, extraClass) {
+        function createPill(label, x, y, extraClass, iconOpts) {
           const el = document.createElement('div');
           el.className = 'physics-pill' + (extraClass ? ' ' + extraClass : '');
-          el.textContent = label;
+          if (iconOpts) {
+            el.classList.add('physics-cube');
+            el.style.setProperty('--cc', iconOpts.color || '#211B14');
+            el.innerHTML = '<img src="' + iconOpts.img + '" alt="' + label + '" draggable="false" ' +
+              'onerror="this.style.display=\'none\';this.parentElement.classList.add(\'noicon\')">' +
+              '<span class="cube-letter">' + (iconOpts.abbr || label.slice(0, 2)) + '</span>';
+          } else {
+            el.textContent = label;
+          }
           arena.appendChild(el);
 
           // Force layout so we can measure
@@ -1547,7 +1610,7 @@
           const ph = el.offsetHeight || 40;
 
           const body = Bodies.rectangle(x, y, pw, ph, {
-            chamfer: { radius: ph / 2 },
+            chamfer: { radius: iconOpts ? 18 : ph / 2 },
             restitution: 0.85,
             friction: 0,
             frictionAir: 0.002,
@@ -1646,6 +1709,23 @@
           const x = cellW * col + cellW * (0.25 + Math.random() * 0.5);
           const y = cellH * row + cellH * (0.25 + Math.random() * 0.5);
           createPill(label, x, y, label === 'More +' ? 'more-pill' : '');
+        });
+
+        // Tool logo cubes — real 3D icon tiles sliced from your icon sheet
+        const TOOLS = [
+          { name: 'Figma',       img: 'tool-icons/figma.png',       color: '#F24E1E', abbr: 'Fi' },
+          { name: 'Blender',     img: 'tool-icons/blender.png',     color: '#EA7600', abbr: 'Bl' },
+          { name: 'Spline',      img: 'tool-icons/spline.png',      color: '#6E5BFF', abbr: 'Sp' },
+          { name: 'ChatGPT',     img: 'tool-icons/chatgpt.png',     color: '#10A37F', abbr: 'Gp' },
+          { name: 'Claude',      img: 'tool-icons/claude.png',      color: '#D97756', abbr: 'Cl' },
+          { name: 'Fresco',      img: 'tool-icons/fresco.png',      color: '#000BFF', abbr: 'Fr' },
+          { name: 'Antigravity', img: 'tool-icons/antigravity.png', color: '#5A7365', abbr: 'Ag' },
+          { name: 'Miro',        img: 'tool-icons/miro.png',        color: '#FFC01E', abbr: 'Mi' }
+        ];
+        TOOLS.forEach((t) => {
+          const x = 120 + Math.random() * Math.max(60, frameW - 240);
+          const y = 80 + Math.random() * Math.max(60, frameH - 160);
+          createPill(t.name, x, y, null, { img: t.img, color: t.color, abbr: t.abbr });
         });
 
         // Mouse repulsion
@@ -1941,6 +2021,141 @@
         }
       });
     })();
+
+    // ===== FOOTER CAT WALK CYCLE =====
+    function initFooterCatWalk() {
+      const footerCanvas = document.getElementById('footer-cat-canvas');
+      if (!footerCanvas) return;
+      const footerCtx = footerCanvas.getContext('2d');
+
+      const totalFrames = 117;
+      const catImages = [];
+      let loadedCount = 0;
+      let isInitialized = false;
+
+      // Load walk frames in background
+      for (let i = 1; i <= totalFrames; i++) {
+        const img = new Image();
+        const num = String(i).padStart(3, '0');
+        img.src = `cat walkloop frames/ezgif-frame-${num}.jpg`;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === totalFrames && !isInitialized) {
+            isInitialized = true;
+            startWalking();
+          }
+        };
+        img.onerror = () => {
+          loadedCount++;
+          if (loadedCount === totalFrames && !isInitialized) {
+            isInitialized = true;
+            startWalking();
+          }
+        };
+        catImages.push(img);
+      }
+
+      const catBboxes = [[40, 176, 488, 608], [40, 176, 488, 608], [48, 176, 496, 608], [56, 176, 496, 608], [80, 176, 504, 608], [88, 168, 504, 608], [88, 168, 504, 608], [88, 168, 512, 608], [88, 168, 520, 608], [88, 168, 520, 608], [88, 168, 528, 608], [88, 168, 527, 608], [88, 176, 528, 608], [88, 176, 536, 608], [88, 184, 536, 608], [88, 192, 544, 608], [88, 192, 544, 608], [96, 192, 544, 608], [88, 192, 552, 608], [88, 192, 552, 608], [88, 192, 560, 608], [88, 192, 560, 608], [96, 184, 560, 608], [112, 184, 568, 608], [120, 184, 568, 608], [128, 176, 576, 608], [128, 176, 576, 608], [136, 176, 576, 608], [136, 176, 584, 608], [144, 176, 584, 608], [152, 176, 592, 608], [152, 176, 592, 608], [152, 176, 592, 608], [160, 176, 600, 608], [168, 176, 600, 608], [160, 184, 608, 608], [160, 184, 608, 608], [160, 184, 608, 608], [152, 184, 616, 608], [160, 184, 616, 608], [168, 177, 624, 608], [168, 177, 624, 608], [184, 176, 624, 608], [192, 176, 632, 608], [192, 176, 632, 608], [200, 176, 640, 608], [200, 176, 640, 608], [200, 176, 648, 608], [208, 176, 656, 608], [208, 176, 656, 608], [216, 184, 664, 608], [216, 184, 664, 608], [216, 184, 664, 608], [224, 184, 672, 608], [224, 192, 672, 608], [216, 192, 680, 608], [216, 192, 680, 608], [216, 192, 688, 608], [224, 192, 688, 608], [232, 192, 696, 608], [248, 184, 704, 608], [248, 184, 704, 608], [264, 184, 704, 608], [272, 176, 712, 608], [280, 176, 717, 608], [288, 176, 720, 608], [288, 176, 720, 608], [296, 176, 728, 608], [304, 176, 736, 608], [312, 176, 736, 608], [304, 176, 744, 608], [304, 176, 744, 608], [304, 176, 751, 608], [296, 184, 752, 608], [296, 184, 760, 608], [304, 176, 768, 608], [304, 176, 768, 608], [320, 176, 776, 608], [336, 176, 784, 608], [368, 176, 784, 608], [376, 168, 792, 608], [376, 168, 792, 608], [384, 168, 800, 608], [384, 168, 806, 608], [392, 168, 816, 608], [392, 168, 824, 608], [392, 168, 824, 608], [392, 176, 824, 608], [392, 176, 832, 608], [384, 184, 840, 608], [384, 184, 848, 608], [384, 184, 848, 608], [384, 192, 848, 608], [392, 192, 856, 608], [400, 192, 864, 608], [424, 184, 872, 608], [424, 184, 872, 608], [432, 184, 872, 608], [440, 184, 880, 608], [443, 184, 888, 608], [448, 176, 896, 608], [448, 176, 896, 608], [456, 176, 896, 608], [472, 176, 904, 608], [480, 176, 912, 608], [480, 176, 920, 608], [480, 176, 920, 608], [480, 176, 920, 608], [472, 176, 928, 608], [472, 184, 936, 608], [472, 184, 941, 608], [472, 184, 941, 608], [480, 176, 944, 608], [496, 176, 952, 608], [512, 176, 960, 608], [544, 176, 968, 608], [544, 176, 968, 608]];
+
+      let catX = -120;
+      let frameIndex = 0;
+      let lastTime = 0;
+      const walkFps = 28;
+      const walkSpeed = 1.6;
+
+      const offscreenCanvas = document.createElement('canvas');
+      const offscreenCtx = offscreenCanvas.getContext('2d');
+
+      function resizeCanvas() {
+        if (footerCanvas.parentElement) {
+          footerCanvas.width = footerCanvas.parentElement.clientWidth;
+          footerCanvas.height = footerCanvas.parentElement.clientHeight;
+        }
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      function startWalking() {
+        requestAnimationFrame(walkAnimate);
+      }
+
+      function walkAnimate(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const elapsed = timestamp - lastTime;
+        const frameDuration = 1000 / walkFps;
+
+        if (elapsed >= frameDuration) {
+          lastTime = timestamp - (elapsed % frameDuration);
+
+          footerCtx.clearRect(0, 0, footerCanvas.width, footerCanvas.height);
+
+          const bbox = catBboxes[frameIndex];
+          const img = catImages[frameIndex];
+          if (bbox && img && img.complete && img.naturalWidth > 0) {
+            const sX = bbox[0];
+            const sY = bbox[1];
+            const sWidth = bbox[2] - bbox[0];
+            const sHeight = bbox[3] - bbox[1];
+
+            offscreenCanvas.width = sWidth;
+            offscreenCanvas.height = sHeight;
+            offscreenCtx.clearRect(0, 0, sWidth, sHeight);
+            offscreenCtx.drawImage(img, sX, sY, sWidth, sHeight, 0, 0, sWidth, sHeight);
+
+            try {
+              const imgData = offscreenCtx.getImageData(0, 0, sWidth, sHeight);
+              const data = imgData.data;
+              const isDark = document.documentElement.classList.contains('dark');
+
+              if (isDark) {
+                for (let j = 0; j < data.length; j += 4) {
+                  const r = data[j];
+                  const g = data[j+1];
+                  const b = data[j+2];
+                  if (r < 30 && g < 30 && b < 30) {
+                    data[j + 3] = 0;
+                  }
+                }
+              } else {
+                for (let j = 0; j < data.length; j += 4) {
+                  let r = data[j];
+                  let g = data[j+1];
+                  let b = data[j+2];
+                  r = 255 - r;
+                  g = 255 - g;
+                  b = 255 - b;
+                  if (r > 225 && g > 225 && b > 225) {
+                    data[j + 3] = 0;
+                  } else {
+                    data[j] = r;
+                    data[j+1] = g;
+                    data[j+2] = b;
+                  }
+                }
+              }
+              offscreenCtx.putImageData(imgData, 0, 0);
+            } catch (e) {
+              console.error("Footer chroma key error:", e);
+            }
+
+            const catScale = 32 / sHeight;
+            const dW = sWidth * catScale;
+            const dH = sHeight * catScale;
+            const dY = (footerCanvas.height - dH) / 2;
+
+            footerCtx.drawImage(offscreenCanvas, 0, 0, sWidth, sHeight, catX, dY, dW, dH);
+
+            catX += walkSpeed;
+            if (catX > footerCanvas.width + 50) {
+              catX = -dW - 50;
+            }
+
+            frameIndex = (frameIndex + 1) % totalFrames;
+          }
+        }
+        requestAnimationFrame(walkAnimate);
+      }
+    }
   </script>
 
   <!-- ===== Popups + floating menu logic ===== -->
@@ -1988,16 +2203,19 @@
         { title: 'Blender Essentials', issuer: 'Udemy', year: '2023' }
       ];
 
-      // ---- Gallery (set `img` to a file path to show a real image) ----
-      const GALLERY = [
-        { title: 'Mobile app concept', tag: 'UI', img: '' },
-        { title: 'Design system', tag: 'Systems', img: '' },
-        { title: '3D hero scene', tag: '3D', img: '' },
-        { title: 'Landing page', tag: 'Web', img: '' },
-        { title: 'Brand explorations', tag: 'Graphics', img: '' },
-        { title: 'Motion study', tag: 'Motion', img: '' }
+      // ---- Gallery: paintings & art (drop your files into a `paintings/` folder) ----
+      // Replace `img` with your real file paths. Missing files fall back to a coloured card.
+      const PAINTINGS = [
+        { title: 'Untitled study', tag: 'Acrylic',     img: 'paintings/painting-1.jpg' },
+        { title: 'Quiet light',    tag: 'Watercolour',  img: 'paintings/painting-2.jpg' },
+        { title: 'Field notes',    tag: 'Ink',          img: 'paintings/painting-3.jpg' },
+        { title: 'Warm hour',      tag: 'Gouache',      img: 'paintings/painting-4.jpg' },
+        { title: 'Portrait',       tag: 'Charcoal',     img: 'paintings/painting-5.jpg' },
+        { title: 'Bloom',          tag: 'Acrylic',      img: 'paintings/painting-6.jpg' },
+        { title: 'Drift',          tag: 'Digital',      img: 'paintings/painting-7.jpg' },
+        { title: 'Still',          tag: 'Oil',          img: 'paintings/painting-8.jpg' }
       ];
-      const GAL_COLORS = ['#FF5A36', '#F2B33A', '#2C7C8C', '#E07BB5', '#F4A261', '#5A7365'];
+      const GAL_COLORS = ['#FF5A36', '#F2B33A', '#2C7C8C', '#E07BB5', '#F4A261', '#5A7365', '#C56A4E', '#7C6FA8'];
 
       const overlay = document.getElementById('ak-overlay');
       const modals = {
@@ -2014,6 +2232,7 @@
         overlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         activeModal = modal;
+        if (modal === modals.gallery) { startRingAuto(); } else { stopRingAuto(); }
       }
       function closeOverlay() {
         overlay.classList.remove('open');
@@ -2021,6 +2240,7 @@
         document.body.style.overflow = '';
         if (activeModal) activeModal.classList.remove('open');
         activeModal = null;
+        stopRingAuto();
       }
 
       // ---- Service cards → popup ----
@@ -2062,17 +2282,87 @@
         certGrid.appendChild(el);
       });
 
-      // ---- Build gallery ----
-      const galGrid = document.getElementById('ak-gallery-grid');
-      GALLERY.forEach((g, i) => {
-        const el = document.createElement('div');
-        el.className = 'ak-gallery-card';
-        const media = g.img
-          ? '<img src="' + g.img + '" alt="' + g.title + '" />'
-          : '<div class="ak-gallery-ph" style="background:' + GAL_COLORS[i % GAL_COLORS.length] + '"><span>' + g.tag + '</span></div>';
-        el.innerHTML = media + '<div class="ak-gallery-cap"><span>' + g.title + '</span><em>' + g.tag + '</em></div>';
-        galGrid.appendChild(el);
+      // ---- Build 3D ring gallery ----
+      const ring = document.getElementById('ak-ring');
+      const ringStage = document.getElementById('ak-ring-stage');
+      const ringTitle = document.getElementById('ak-ring-title');
+      const ringCounter = document.getElementById('ak-ring-counter');
+      const N = PAINTINGS.length;
+      const theta = 360 / N;
+      const panelW = 220;
+      const radius = Math.round((panelW / 2) / Math.tan(Math.PI / N));
+      let ringIndex = 0;
+      let ringAngle = 0;          // continuous angle while dragging
+      let ringAuto = null;
+      let ringDragging = false;
+
+      PAINTINGS.forEach((p, i) => {
+        const panel = document.createElement('div');
+        panel.className = 'ak-ring-panel';
+        panel.style.setProperty('--pc', GAL_COLORS[i % GAL_COLORS.length]);
+        panel.style.transform = 'rotateY(' + (i * theta) + 'deg) translateZ(' + radius + 'px)';
+        panel.innerHTML =
+          '<img src="' + p.img + '" alt="' + p.title + '" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'noimg\')" />' +
+          '<div class="ph"><span>' + p.tag + '</span></div>' +
+          '<div class="cap"><b>' + p.title + '</b><i>' + p.tag + '</i></div>';
+        panel.addEventListener('click', () => { if (!ringDragging) goRing(i); });
+        ring.appendChild(panel);
       });
+
+      function setRingTransform(angle) {
+        ring.style.transform = 'translateZ(-' + radius + 'px) rotateY(' + angle + 'deg)';
+      }
+      function updateRingMeta() {
+        const idx = ((ringIndex % N) + N) % N;
+        ringTitle.textContent = PAINTINGS[idx].title;
+        ringCounter.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
+        ring.querySelectorAll('.ak-ring-panel').forEach((el, k) => el.classList.toggle('front', k === idx));
+      }
+      function goRing(i) {
+        ringIndex = i;
+        ringAngle = -i * theta;
+        ring.style.transition = 'transform 0.8s cubic-bezier(.16,1,.3,1)';
+        setRingTransform(ringAngle);
+        updateRingMeta();
+      }
+      function stepRing(dir) { goRing(ringIndex + dir); }
+
+      function startRingAuto() {
+        stopRingAuto();
+        ringAuto = setInterval(() => { if (!ringDragging) stepRing(1); }, 2800);
+      }
+      function stopRingAuto() { if (ringAuto) { clearInterval(ringAuto); ringAuto = null; } }
+
+      document.getElementById('ak-ring-next').addEventListener('click', () => stepRing(1));
+      document.getElementById('ak-ring-prev').addEventListener('click', () => stepRing(-1));
+      ringStage.addEventListener('mouseenter', stopRingAuto);
+      ringStage.addEventListener('mouseleave', () => { if (modals.gallery.classList.contains('open')) startRingAuto(); });
+
+      // drag to spin
+      let dragStartX = 0, dragStartAngle = 0;
+      function onDragStart(x) { ringDragging = false; dragStartX = x; dragStartAngle = ringAngle; ring.style.transition = 'none'; stopRingAuto(); }
+      function onDragMove(x) {
+        if (dragStartX === null) return;
+        const dx = x - dragStartX;
+        if (Math.abs(dx) > 4) ringDragging = true;
+        ringAngle = dragStartAngle + dx * 0.45;
+        setRingTransform(ringAngle);
+      }
+      function onDragEnd() {
+        if (dragStartX === null) return;
+        ringIndex = Math.round(-ringAngle / theta);
+        goRing(ringIndex);
+        dragStartX = null;
+        if (modals.gallery.classList.contains('open')) startRingAuto();
+        setTimeout(() => { ringDragging = false; }, 60);
+      }
+      ringStage.addEventListener('pointerdown', (e) => { onDragStart(e.clientX); ringStage.setPointerCapture(e.pointerId); });
+      ringStage.addEventListener('pointermove', (e) => { if (dragStartX !== null) onDragMove(e.clientX); });
+      ringStage.addEventListener('pointerup', onDragEnd);
+      ringStage.addEventListener('pointercancel', onDragEnd);
+
+      setRingTransform(0);
+      updateRingMeta();
 
       // ---- Floating menu ----
       const fabWrap = document.getElementById('ak-fab-wrap');
@@ -2100,6 +2390,65 @@
       });
       document.querySelectorAll('.ak-modal-close').forEach(b => b.addEventListener('click', closeOverlay));
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeOverlay(); });
+    })();
+
+    // ===== MY APPROACH — scroll-driven morphing circle =====
+    (function approachScrollStory() {
+      const sectionEl = document.getElementById('approach');
+      const blob = document.getElementById('approach-blob');
+      if (!sectionEl || !blob) return;
+      const inners = Array.from(sectionEl.querySelectorAll('.blob-inner'));
+      const dots = Array.from(sectionEl.querySelectorAll('.adot'));
+      const markers = Array.from(document.querySelectorAll('.approach-marker'));
+      const colors = ['#FF5A36', '#F2B33A', '#2C7C8C'];
+      let current = -1;
+
+      function setStep(n) {
+        if (n === current) return;
+        current = n;
+        sectionEl.style.setProperty('--ac', colors[n]);
+        inners.forEach((el, i) => el.classList.toggle('active', i === n));
+        dots.forEach((el, i) => el.classList.toggle('active', i === n));
+        // brief reshape pulse on the boundary
+        blob.style.animation = 'none';
+        void blob.offsetWidth;
+        blob.style.animation = '';
+      }
+      setStep(0);
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setStep(parseInt(e.target.dataset.step, 10) || 0);
+        });
+      }, { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+      markers.forEach((m) => io.observe(m));
+
+      // Click a dot to jump to that step (works on mobile where there is no pinned scroll)
+      dots.forEach((d, i) => {
+        d.addEventListener('click', () => {
+          setStep(i);
+          const rect = markers[i].getBoundingClientRect();
+          if (rect.height > 1) {
+            window.scrollTo({ top: rect.top + window.pageYOffset, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+
+    // ===== DARK / LIGHT THEME TOGGLE =====
+    (function themeToggle() {
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      const icon = btn.querySelector('i');
+      function apply(dark) {
+        root.classList.toggle('dark', dark);
+        if (icon) icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        try { localStorage.setItem('ak-theme', dark ? 'dark' : 'light'); } catch (e) {}
+      }
+      // initialise from current state (set pre-paint by the head script)
+      apply(root.classList.contains('dark'));
+      btn.addEventListener('click', () => apply(!root.classList.contains('dark')));
     })();
   </script>
 </body>
